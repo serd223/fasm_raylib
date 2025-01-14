@@ -7,6 +7,7 @@ extrn 'BeginDrawing' as BeginDrawing
 extrn 'EndDrawing' as EndDrawing
 extrn 'ClearBackground' as ClearBackground
 extrn 'WindowShouldClose' as WindowShouldClose
+extrn 'SetTargetFPS' as SetTargetFPS
 
 _start:
         mov rdi, 800
@@ -14,21 +15,26 @@ _start:
         mov rdx, txt
         call InitWindow
 
+        mov rdi, 144
+        call SetTargetFPS
 
 .again:
+        ; - Drawing
         call BeginDrawing
         mov rdi, 0
         mov rsi, 0
         call ClearBackground
 
         call EndDrawing
+        ; ---------
 
-
-
+        ; - Loop condition
         call WindowShouldClose
         cmp rax, 0
         je .again
+        ; ----------------
 
+        ; - Cleanup
         call CloseWindow
         
         mov rdi, 0
