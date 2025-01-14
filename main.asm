@@ -21,8 +21,8 @@ _start:
 .again:
         ; - Drawing
         call BeginDrawing
-        mov rdi, 0
-        mov rsi, 0
+        ;        0xaabbggrr
+        mov edi, 0xff0000ff
         call ClearBackground
 
         call EndDrawing
