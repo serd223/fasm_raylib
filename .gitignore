@@ -1,7 +1,5 @@
-raylib/
 main_c
 main
 *.o
-*.a
 *.out
 .clangd
