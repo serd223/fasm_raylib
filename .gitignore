@@ -1,4 +1,5 @@
 main_c
+raylib/
 main
 *.o
 *.out
