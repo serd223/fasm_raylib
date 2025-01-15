@@ -1,5 +1,6 @@
 format ELF64
 
+section '.text' executable
 public _start
 extrn 'InitWindow' as InitWindow
 extrn 'CloseWindow' as CloseWindow
@@ -43,4 +44,7 @@ _start:
         ret
 
 
+section '.data'
 txt: db "Hello from Assembly!", 0
+
+section '.note.GNU-stack' writeable
